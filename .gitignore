@@ -1,0 +1,11 @@
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/bin/
+/build/
+/composer.phar
+/vendor/
+/web/bundles/
+/web/downloads/*
+/web/images/*
+/web/media/*
+/web/uploads/*
