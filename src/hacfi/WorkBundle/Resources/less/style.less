@@ -1,0 +1,311 @@
+@import "lib/normalize.less";
+@import "lib/preboot.less";
+@import "lib/pure/buttons_all.less";
+@import "lib/pure/forms_all.less";
+@import "lib/pure/grids_all.less";
+@import "lib/pure/menus_all.less";
+@import "lib/jquery-ui-1.10.3.custom.less";
+@import "lib/font-awesome/font-awesome.less";
+
+body {
+//  font-family: 'Source Sans Pro', sans-serif;
+//  font-family: 'Droid Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+//  font-family: 'PT Sans', sans-serif;
+//  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/*
+p {
+  margin: 0 0 10px;
+}
+*/
+
+a {
+  color: #1b98f8;
+  text-decoration: underline;
+  outline: 0 none !important;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0 none !important;
+}
+
+.clear {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  visibility: hidden;
+}
+
+#layout {
+  padding-left: 500px; /* "left col (nav + list)" width */
+  position: relative;
+}
+
+#nav, #list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+#nav {
+  margin-left: -500px; /* "left col (nav + list)" width */
+  width: 150px;
+  background: rgb(37, 42, 58);
+  text-align: center;
+  padding: 2em 0;
+  font-size: 15px;
+}
+
+#list {
+  margin-left: -350px;
+  width: 350px;
+  border-right: 1px solid #ddd;
+
+  // TEST
+  .content {
+    height: 100%;
+  }
+}
+
+#main {
+  width: 100%;
+}
+
+/* HELPER CLASSES */
+.primary-button,
+.secondary-button {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.primary-button {
+  color: #fff;
+  background: #1b98f8;
+  margin: 1em 0;
+}
+
+.secondary-button {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  padding: 0.5em 2em;
+  font-size: 80%;
+}
+
+/* Vertical Navigation Styles */
+#nav .pure-menu {
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+#nav .pure-menu a:hover,
+#nav .pure-menu a:focus {
+  background: rgb(55, 60, 90);
+}
+
+#nav .pure-menu a {
+  color: #fff;
+  margin-left: 0.5em;
+}
+
+#nav .pure-menu-heading {
+  border-bottom: none;
+  font-size: 110%;
+  color: rgb(75, 113, 151);
+}
+
+#nav .nav-menu-button {
+  display: none;
+}
+
+.email-count {
+  color: rgb(75, 113, 151);
+}
+
+.email-label-bugs,
+.email-label-feature,
+.email-label-design {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 0.5em;
+  border-radius: 3px;
+}
+
+.email-label-bugs {
+  background: #ffc94c;
+}
+
+.email-label-feature {
+  background: #41ccb4;
+}
+
+.email-label-new {
+  background: #40c365;
+}
+
+.email-label-design {
+  background: #1b98f8;
+}
+
+/* Email Item Styles */
+.email-item {
+  padding: 15px 16px;
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-left: 6px solid transparent;
+}
+
+.email-item-drop {
+  padding: 15px 16px;
+  height: 70px;
+  background-color: #02a3c6;
+  border-bottom: 1px solid #ddd;
+  border-left: 6px solid transparent;
+}
+
+.email-avatar {
+  border-radius: 3px;
+  margin-right: 0.5em;
+}
+
+.email-name, .email-subject {
+  margin: 0;
+}
+
+.email-name {
+  text-transform: uppercase;
+  color: #999;
+}
+
+.email-desc {
+  font-size: 80%;
+  margin: 0.4em 0;
+}
+
+//.email-item-selected {
+.content .ui-selected {
+  background: #eee;
+}
+
+.email-item-unread {
+  border-left: 6px solid #02a3c6;
+}
+
+/* Email Content Styles */
+.email-content-header, .email-content-body, .email-content-footer {
+  padding: 1em 2em;
+}
+
+.email-content-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.email-content-title {
+  margin: 0.5em 0 0;
+}
+
+.email-content-subtitle {
+  font-size: 1em;
+  margin: 0;
+  font-weight: normal;
+}
+
+.email-content-subtitle span {
+  color: #999;
+}
+
+.email-content-controls {
+  margin-top: 2em;
+  text-align: right;
+}
+
+.email-content-controls .secondary-button {
+  margin-bottom: 0.3em;
+}
+
+@media (max-width: 867px) {
+
+  #list, #main {
+    width: auto;
+  }
+
+  #layout {
+    padding-left: -150px;
+  }
+
+  #list {
+    left: 500px;
+    right: 0;
+    width: auto;
+    height: 33%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #main {
+    position: fixed;
+    top: 33%;
+    right: 0;
+    bottom: 0;
+    left: 150px;
+    overflow: auto;
+    width: auto; /* so that it's not 100% */
+  }
+}
+
+@media (max-width: 480px) {
+  #layout, #nav, #list, #main {
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav {
+    width: 100%;
+    height: 40px;
+    position: relative;
+  }
+
+  #list {
+    width: 100%;
+  }
+
+  #nav .nav-menu-button {
+    display: block;
+    top: 0.5em;
+    right: 0.5em;
+    position: absolute;
+  }
+
+  #nav.active {
+    height: 80%;
+  }
+
+  .nav-inner {
+    display: none;
+  }
+
+  #nav.active .nav-inner {
+    display: block;
+  }
+
+  .email-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+

@@ -1,0 +1,7 @@
+parameters:
+#    hacfi_work.example.class: hacfi\WorkBundle\Example
+
+services:
+#    hacfi_work.example:
+#        class: %hacfi_work.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

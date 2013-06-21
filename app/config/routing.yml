@@ -1,15 +1,19 @@
+hacfi_work:
+    resource: "@hacfiWorkBundle/Resources/config/routing.yml"
+    prefix:   /
+
 home:
     pattern:   /
-    defaults:  { _controller: yourAppBundle:Home:index }
+    defaults:  { _controller: hacfiWorkBundle:Dashboard:index }
 
 base:
     pattern:   /
-    defaults:  { _controller: yourAppBundle:Home:index }
+    defaults:  { _controller: hacfiWorkBundle:Dashboard:index }
 
 
 login:
     pattern:   /login
-    defaults:  { _controller: yourAppBundle:Auth:login }
+    defaults:  { _controller: hacfiWorkBundle:Auth:login }
 
 login_check:
     pattern:   /login_check

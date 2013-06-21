@@ -12,8 +12,8 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: $2y$12$BwMf/IIWw6rXT3sM54m9bu2G/y26u6Iz.BUjc7t5Suq4lJNs9eDOS, roles: [ 'ROLE_USER' ] }
+                    admin: { password: $2y$12$3hzmDgYAum6HIyQLAQwGXOC/NNXw3S274mSfeN3Hf39rRhzxYAqpK, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         static:
@@ -30,7 +30,7 @@ security:
 
         secured_area:
             pattern:   ^/
-            anonymous: ~
+            anonymous: false
             form_login:
                 check_path:            login_check
                 login_path:            login

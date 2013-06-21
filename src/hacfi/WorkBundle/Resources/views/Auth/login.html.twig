@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+  <form action="{{ path('login_check') }}" method="post">
+    <input type="hidden" name="_target_path" value="{{ target_path|default('') }}">
+    <input type="text" id="email" name="_email" value="{{ last_email }}" placeholder="E-mail address"><br>
+    <input type="password" id="password" name="_password" placeholder="Password"><br>
+    <p>
+      <button type="submit" class="">Log in</button>
+    </p>
+  </form>
+
+{% endblock %}

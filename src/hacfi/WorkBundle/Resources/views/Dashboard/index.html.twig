@@ -1,0 +1,135 @@
+{% extends 'hacfiWorkBundle::layout.html.twig' %}
+
+{% block content %}
+
+  <div class="pure-u" id="list">
+    <div class="content">
+      <div class="email-item email-item-selected pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">hacfi</h5>
+          <h4 class="email-subject">List width tablet mode</h4>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+
+      <div class="email-item email-item-unread pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">hacfi</h5>
+          <h4 class="email-subject">List width tablet mode</h4>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+
+      <div class="email-item pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">hacfi</h5>
+          <a href="#"><h4 class="email-subject">List width tablet mode</h4></a>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+
+      <div class="email-item pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">hacfi</h5>
+          <a href="#"><h4 class="email-subject">List width tablet mode</h4></a>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+
+      <div class="email-item pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">hacfi</h5>
+          <h4 class="email-subject">List width tablet mode</h4>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pure-u" id="main">
+    <div class="content">
+      <div class="email-content pure-g">
+        <div class="email-content-header pure-g">
+          <div class="pure-u-1-2">
+            <h1 class="email-content-title">Hello from Toronto</h1>
+
+            <p class="email-content-subtitle">
+              From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
+            </p>
+          </div>
+
+          <div class="pure-u-1-2 email-content-controls">
+            <button class="pure-button secondary-button">Reply</button>
+            <button class="pure-button secondary-button">Forward</button>
+            <button class="pure-button secondary-button">Move to</button>
+          </div>
+        </div>
+
+        <div class="email-content-body pure-u-1">
+          <p>Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.</p>
+
+          <p>YAY</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block jquery %}
+
+  $("#list .content:first").sortable({
+    handle: "img",
+    placeholder: "email-item-drop"
+  });
+  $("#list .content:first").selectable({
+    filter: ".email-item",
+    selected: function(e, ui) {
+      console.log(e, ui);
+    },
+    create: function (e, ui) {
+      var element = $(e.target).children('.email-item-selected:first') || $(e.target).children().first(),
+          selectable = $(e.target);
+
+      element.addClass("ui-selecting");
+      selectable.data("ui-selectable")._mouseStop(null);;
+    }
+  });
+
+
+{% endblock %}
