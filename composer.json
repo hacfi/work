@@ -20,7 +20,8 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "ircmaxell/password-compat": "1.0.*",
-        "leafo/lessphp": "0.3.*@dev"
+        "leafo/lessphp": "0.3.*@dev",
+        "knplabs/github-api": "1.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

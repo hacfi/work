@@ -1,7 +1,13 @@
 parameters:
-#    hacfi_work.example.class: hacfi\WorkBundle\Example
+    hacfi_work.github_api_factory.class: hacfi\WorkBundle\Service\GithubApiFactory
 
 services:
-#    hacfi_work.example:
-#        class: %hacfi_work.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    hacfi_work.github.api:
+        class: %hacfi_work.github_api_factory.class%
+        arguments: [%github_username%, %github_password%]
+
+    hacfi_work.github.api.currentuser:
+        class: Github\Api\CurrentUser
+        factory_service: hacfi_work.github.api
+        factory_method: getApi
+        arguments: ["current_user"]

@@ -4,6 +4,30 @@
 
   <div class="pure-u" id="list">
     <div class="content">
+
+      {% for repo in repositories %}
+
+      <div class="email-item pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="{{ repo.owner.login }}" src="{{ repo.owner.avatar_url }}" height="64" width="64" />
+          {#
+          <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
+          #}
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">{{ repo.owner.login }}</h5>
+          <a href="#"><h4 class="email-subject">{{ repo.name }}</h4></a>
+
+          <p class="email-desc">
+            There seems to be a bug with the list
+          </p>
+        </div>
+      </div>
+
+      {% endfor %}
+
+      {#
       <div class="email-item email-item-selected pure-g">
         <div class="pure-u">
           <img class="email-avatar" alt="hacfi" src="{{ asset('images/users/hacfi.jpg') }}" height="64" width="64" />
@@ -78,6 +102,7 @@
           </p>
         </div>
       </div>
+      #}
     </div>
   </div>
 
@@ -86,7 +111,7 @@
       <div class="email-content pure-g">
         <div class="email-content-header pure-g">
           <div class="pure-u-1-2">
-            <h1 class="email-content-title">Hello from Toronto</h1>
+            <h1 class="email-content-title">Hello from Toronto {{ calls_remaining }}</h1>
 
             <p class="email-content-subtitle">
               From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
