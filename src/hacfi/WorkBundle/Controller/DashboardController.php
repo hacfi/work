@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $githubApi = $this->get('hacfi_work.github.api');
 
         $lastResponse = $githubApi->getClient()->getHttpClient()->getLastResponse();
-        $lastResponse->getApiLimit();
+        //$lastResponse->getApiLimit();
 
 
         return $this->render(
@@ -39,7 +39,7 @@ class DashboardController extends Controller
                 'name'            => 'howdy',
                 'repositories'    => $repositories,
                 'issues'          => $issues,
-                'calls_remaining' => $lastResponse->remainingCalls
+                //'calls_remaining' => $lastResponse->remainingCalls
             )
         );
     }
